@@ -36,7 +36,7 @@ module.exports = function(webserver, controller) {
 
                     if (err) {
                         debug('Error fetching user identity', err);
-                        return res.redirect('/login_error.html');
+                        return res.send('Error logging in with Slack');
                     }
 
                     // Now we've got all we need to connect to this user's team
