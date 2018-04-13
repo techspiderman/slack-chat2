@@ -19,6 +19,7 @@ if (!process.env.clientId || !process.env.clientSecret || !process.env.PORT) {
   process.exit(1);
 }
 
+console.log('port:' + process.env.PORT);
 var Botkit = require('botkit');
 var debug = require('debug')('botkit:main');
 
