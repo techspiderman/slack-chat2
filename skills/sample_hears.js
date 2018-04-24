@@ -147,7 +147,7 @@ controller.on('interactive_message_callback', function(bot, message) {
         text: 'Great. Thanks for entering traits. What skills helped you?',
         attachments: [
             {
-                title: 'Skills',
+                
                 callback_id: '456',
                 attachment_type: 'default',
                 actions: [
