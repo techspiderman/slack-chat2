@@ -147,7 +147,7 @@ controller.on('interactive_message_callback', function(bot, message) {
         attachments: [
             {
                 title: 'My buttons',
-                callback_id: '123',
+                callback_id: '456',
                 attachment_type: 'default',
                 actions: [
                     {
@@ -174,7 +174,7 @@ controller.on('interactive_message_callback', function(bot, message) {
         ]
     });
 
-});
 }
+} );
 
 };
