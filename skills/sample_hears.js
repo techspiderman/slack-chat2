@@ -96,9 +96,14 @@ bot.reply(message, {
 
     });
 
-controller.on('send-me-button',function(bot,message) {
+controller.on('slash_command',function(bot,message) {
 
     // reply to slash command
+
+    console.log('test command');
+
+    if (message.command === '/send-me-button')
+    {
    
     bot.reply(message, {
         attachments:[
@@ -124,7 +129,10 @@ controller.on('send-me-button',function(bot,message) {
         ]
     });
 
-})
+    }
+
+});
+
 
 
 // receive an interactive message, and reply with a message that will replace the original
