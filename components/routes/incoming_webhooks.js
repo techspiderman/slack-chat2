@@ -98,5 +98,13 @@ module.exports = function(webserver, controller) {
     }
 });
 
+     controller.on('interactive_message_callback', function(bot, message) {
+
+    var ids = message.callback_id.split(/\-/);
+    console.log('id' + ids);
+    console.log('message:' + message);
+
+     });
+
 
 }
