@@ -101,6 +101,7 @@ controller.on('slash_command',function(bot,message) {
     // reply to slash command
 
     console.log('test command');
+    bot.replyAcknowledge();
 
     if (message.command === '/success')
     {
@@ -108,7 +109,7 @@ controller.on('slash_command',function(bot,message) {
     bot.reply(message, {
         attachments:[
             {
-                title: 'Thanks for adding success. What traits helped you?',
+                title: 'Congratulations on your success. What traits helped you?',
                 callback_id: '123',
                 attachment_type: 'default',
                 actions: [
@@ -143,10 +144,10 @@ controller.on('interactive_message_callback', function(bot, message) {
     if (message.callback_id === '123'   ){
 
     bot.replyInteractive(message, {
-        text: 'Great. Thanks for entering traits. What skills helped?',
+        text: 'Great. Thanks for entering traits. What skills helped you?',
         attachments: [
             {
-                title: 'My buttons',
+                title: 'Skills',
                 callback_id: '456',
                 attachment_type: 'default',
                 actions: [
