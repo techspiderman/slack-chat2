@@ -55,6 +55,8 @@ require("fs").readdirSync(normalizedPath).forEach(function(file) {
 
 
     debug('Configured /slack/receive url');
+        console.log('Configured /slack/receive url');
+
     webserver.post('/slack/receive', function(req, res) {
 
         // NOTE: we should enforce the token check here
