@@ -102,7 +102,7 @@ controller.on('slash_command',function(bot,message) {
 
     console.log('test command');
 
-    if (message.command === '/send-me-button')
+    if (message.command === '/success')
     {
    
     bot.reply(message, {
@@ -143,7 +143,7 @@ controller.on('interactive_message_callback', function(bot, message) {
     if (message.callback_id === '123'   ){
 
     bot.replyInteractive(message, {
-        text: 'Great. Your traits that helped:' + message.actions.value + '. What skills helped?',
+        text: 'Great. Thanks for entering traits. What skills helped?',
         attachments: [
             {
                 title: 'My buttons',
