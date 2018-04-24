@@ -108,20 +108,20 @@ controller.on('slash_command',function(bot,message) {
     bot.reply(message, {
         attachments:[
             {
-                title: 'Do you want to interact with my buttons?',
+                title: 'Thanks for adding success. What traits helped you?',
                 callback_id: '123',
                 attachment_type: 'default',
                 actions: [
                     {
-                        "name":"yes",
-                        "text": "Yes",
-                        "value": "yes",
+                        "name":"Speed",
+                        "text": "Speed",
+                        "value": "Speed",
                         "type": "button",
                     },
                     {
-                        "name":"no",
-                        "text": "No",
-                        "value": "no",
+                        "name":"Focus",
+                        "text": "Focus",
+                        "value": "Focus",
                         "type": "button",
                     }
                 ]
@@ -140,8 +140,10 @@ controller.on('interactive_message_callback', function(bot, message) {
 
     // check message.actions and message.callback_id to see what action to take...
 
+    if (message.callback_id === '123'   ){
+
     bot.replyInteractive(message, {
-        text: '...',
+        text: 'Great. Your traits that helped:' + message.actions.value + '. What skills helped?',
         attachments: [
             {
                 title: 'My buttons',
@@ -149,16 +151,16 @@ controller.on('interactive_message_callback', function(bot, message) {
                 attachment_type: 'default',
                 actions: [
                     {
-                        "name":"yes",
-                        "text": "Yes!",
-                        "value": "yes",
+                        "name":"Creativity",
+                        "text": "Creativity",
+                        "value": "Creativity",
                         "type": "button",
                     },
                     {
-                       "text": "No!",
-                        "name": "no",
-                        "value": "delete",
-                        "style": "danger",
+                       "text": "Positivity",
+                        "name": "Positivity",
+                        "value": "Positivity",
+                       
                         "type": "button",
                         "confirm": {
                           "title": "Are you sure?",
@@ -173,6 +175,6 @@ controller.on('interactive_message_callback', function(bot, message) {
     });
 
 });
-
+}
 
 };
