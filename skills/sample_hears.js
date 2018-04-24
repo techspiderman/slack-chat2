@@ -144,10 +144,10 @@ controller.on('interactive_message_callback', function(bot, message) {
     if (message.callback_id === '123'   ){
 
     bot.replyInteractive(message, {
-        text: 'Great. Thanks for entering traits. What skills helped you?',
+      
         attachments: [
             {
-                
+                title: 'Great. Thanks for entering traits. What skills helped you?',
                 callback_id: '456',
                 attachment_type: 'default',
                 actions: [
