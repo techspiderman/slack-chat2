@@ -109,7 +109,7 @@ controller.on('slash_command',function(bot,message) {
     bot.reply(message, {
         attachments:[
             {
-                title: 'Congratulations on your success.' + message.actions.value + ' What traits helped you?',
+                title: 'Congratulations on your success.' + message.actions["value"] + ' What traits helped you?',
                 callback_id: '123',
                 attachment_type: 'default',
                 actions: [
