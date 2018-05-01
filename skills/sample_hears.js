@@ -20,7 +20,7 @@ module.exports = function(controller) {
 bot.reply(message, {
         attachments:[
             {
-                title: 'Congratulations on your success:'+ message + '. Which of your traits helped you in achieving this success?',
+                title: 'Congratulations on your success:'+ JSON.stringify(message) + '. Which of your traits helped you in achieving this success?',
                 callback_id: '123',
                 attachment_type: 'default',
                 actions: [
@@ -109,7 +109,7 @@ controller.on('slash_command',function(bot,message) {
     bot.reply(message, {
         attachments:[
             {
-                title: 'Congratulations on your success.' + message + ' What traits helped you?',
+                title: 'Congratulations on your success.' + JSON.stringify(message) + ' What traits helped you?',
                 callback_id: '123',
                 attachment_type: 'default',
                 actions: [
