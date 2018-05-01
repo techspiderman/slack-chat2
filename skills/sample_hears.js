@@ -20,7 +20,7 @@ module.exports = function(controller) {
 bot.reply(message, {
         attachments:[
             {
-                title: 'Congratulations on your success! Which of your traits helped you in achieving this success?',
+                title: 'Congratulations on your success:'+ message + '. Which of your traits helped you in achieving this success?',
                 callback_id: '123',
                 attachment_type: 'default',
                 actions: [
@@ -100,7 +100,7 @@ controller.on('slash_command',function(bot,message) {
 
     // reply to slash command
 
-    console.log('test command');
+   // console.log('test command');
     bot.replyAcknowledge();
 
     if (message.command === '/success')
@@ -109,7 +109,7 @@ controller.on('slash_command',function(bot,message) {
     bot.reply(message, {
         attachments:[
             {
-                title: 'Congratulations on your success. What traits helped you?',
+                title: 'Congratulations on your success.' + message + ' What traits helped you?',
                 callback_id: '123',
                 attachment_type: 'default',
                 actions: [
@@ -147,7 +147,7 @@ controller.on('interactive_message_callback', function(bot, message) {
       
         attachments: [
             {
-                title: 'Great. Thanks for entering traits. What skills helped you?',
+                title: 'Great. Good to know that ' + message.actions.value + ' helped you achieve this success. What skills helped you?',
                 callback_id: '456',
                 attachment_type: 'default',
                 actions: [
