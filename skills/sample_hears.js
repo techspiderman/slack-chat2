@@ -149,7 +149,7 @@ controller.on('interactive_message_callback', function(bot, message) {
       
         attachments: [
             {
-                title: 'Great. Good to know that ' + message.actions[0].value + ' helped you achieve this success. What skills helped you?',
+                title: 'Great. Good to know that trait:' + message.actions[0].value + ' helped you achieve this success. What skills helped you?',
                 callback_id: '456',
                 attachment_type: 'default',
                 actions: [
@@ -178,6 +178,44 @@ controller.on('interactive_message_callback', function(bot, message) {
     });
 
 }
+
+if (message.callback_id === '456'   ){
+
+    bot.replyInteractive(message, {
+      
+        attachments: [
+            {
+                title: 'Great. Good to know that skill:' + message.actions[0].value + ' helped you achieve this success.' ,
+                callback_id: '789',
+                attachment_type: 'default',
+                actions: [
+                    {
+                        "name":"Creativity",
+                        "text": "Creativity",
+                        "value": "Creativity",
+                        "type": "button",
+                    },
+                    {
+                       "text": "Positivity",
+                        "name": "Positivity",
+                        "value": "Positivity",
+                       
+                        "type": "button",
+                        "confirm": {
+                          "title": "Are you sure?",
+                          "text": "This will do something!",
+                          "ok_text": "Yes",
+                          "dismiss_text": "No"
+                        }
+                    }
+                ]
+            }
+        ]
+    });
+
+}
+
+
 } );
 
 };
