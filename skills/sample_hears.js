@@ -110,7 +110,7 @@ controller.on('slash_command',function(bot,message) {
     bot.reply(message, {
         attachments:[
             {
-                title: 'Congratulations on your success.' + JSON.stringify(message) + message.raw_message.text + ' What traits helped you?',
+                title: 'Congratulations on your success.' + message.raw_message.text + ' What traits helped you?',
                 callback_id: '123',
                 attachment_type: 'default',
                 actions: [
@@ -149,7 +149,7 @@ controller.on('interactive_message_callback', function(bot, message) {
       
         attachments: [
             {
-                title: 'Great. Good to know that ' + JSON.stringify(message.actions.value) + ' helped you achieve this success. What skills helped you?',
+                title: 'Great. Good to know that ' + message.actions[0].value + ' helped you achieve this success. What skills helped you?',
                 callback_id: '456',
                 attachment_type: 'default',
                 actions: [
