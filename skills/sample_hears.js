@@ -149,7 +149,7 @@ controller.on('interactive_message_callback', function(bot, message) {
       
         attachments: [
             {
-                title: 'Great. Good to know that ' + JSON.stringify(message) + ' helped you achieve this success. What skills helped you?',
+                title: 'Great. Good to know that ' + JSON.stringify(message.actions.value) + ' helped you achieve this success. What skills helped you?',
                 callback_id: '456',
                 attachment_type: 'default',
                 actions: [
