@@ -16,7 +16,8 @@ module.exports = function(controller) {
         //bot.reply(message, " " + message.team);
        
        // bot.reply(message,"Congratulations on your success! Your success:" + message.text + " has been added to your success log.");
-    
+        bot.replyAcknowledge();
+
 bot.reply(message, {
         attachments:[
             {
@@ -109,7 +110,7 @@ controller.on('slash_command',function(bot,message) {
     bot.reply(message, {
         attachments:[
             {
-                title: 'Congratulations on your success.' + message.actions["value"] + ' What traits helped you?',
+                title: 'Congratulations on your success.' + JSON.stringify(message.actions) + ' What traits helped you?',
                 callback_id: '123',
                 attachment_type: 'default',
                 actions: [
@@ -140,6 +141,7 @@ controller.on('slash_command',function(bot,message) {
 controller.on('interactive_message_callback', function(bot, message) {
 
     // check message.actions and message.callback_id to see what action to take...
+    bot.replyAcknowledge();
 
     if (message.callback_id === '123'   ){
 
