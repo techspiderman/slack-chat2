@@ -1,18 +1,27 @@
 var debug = require('debug')('botkit:incoming_webhooks');
+var express = require('express')
+var request = require('request')
+var bodyParser = require('body-parser')
+var app = express()
+var urlencodedParser = bodyParser.urlencoded({ extended: false })
+
+function sendMessageToSlackResponseURL(responseURL, JSONmessage){
+    var postOptions = {
+        uri: responseURL,
+        method: 'POST',
+        headers: {
+            'Content-type': 'application/json'
+        },
+        json: JSONmessage
+    }
+    request(postOptions, (error, response, body) => {
+        if (error){
+            // handle errors as you see fit
+        }
+    })
+}
 
 module.exports = function(webserver, controller) {
 
-    debug('Configured /slack/receive url');
-    webserver.post('/slack/receive', function(req, res) {
 
-        // NOTE: we should enforce the token check here
-
-        // respond to Slack that the webhook has been received.
-        res.status(200);
-
-        // Now, pass the webhook into be processed
-        controller.handleWebhookPayload(req, res);
-
-    });
-
-}
+};
